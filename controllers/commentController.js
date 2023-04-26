@@ -32,6 +32,7 @@ exports.createComment = async (req, res) => {
     } catch (error) {
         res.status(503).json({
             success: false,
+            data: error.message,
             message: "Something went wrong"
         })
     }
