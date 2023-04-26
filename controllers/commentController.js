@@ -12,6 +12,8 @@ exports.createComment = async (req, res) => {
         });
 
         // save comment object to database
+        // To store documents we have 2 ways : create() and save()
+        // create({post,user,body}) is used with model name and save is used with object
         const savedComment = await comment.save();
 
         // find the post by id inside "Post" model and then add savedComment id to "Post" comments array
