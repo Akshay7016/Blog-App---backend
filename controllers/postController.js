@@ -22,12 +22,11 @@ exports.createPost = async (req, res) => {
     }
 };
 
-// TODO: Need extra testing for populate("likes")
 exports.getAllPosts = async (req, res) => {
     try {
         // const posts = await Post.find({});
-        // const posts = await Post.find({}).populate("likes").populate("comments").exec();
-        const posts = await Post.find({}).populate("comments").exec();
+        // const posts = await Post.find({}).populate("comments").exec();
+        const posts = await Post.find({}).populate("likes").populate("comments").exec();
 
         res.status(200).json({
             success: true,
